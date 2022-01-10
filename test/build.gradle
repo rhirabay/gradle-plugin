@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        classpath group: 'rhirabay', name: 'gradle-plugin', version: '1.0.1+'
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.5.8'
+    id 'java'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+apply plugin: 'rhirabay.gradle-plugin'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+//    enabled = true
+    classifier = ''
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
